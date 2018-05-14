@@ -56,6 +56,7 @@
   }
   * {
     cursor: default;
+    font-family:-apple-system , BlinkMacSystemFont , "Segoe UI" , Roboto , "Segoe UI" , "Helvetica Neue", "PingFang SC", "Noto Sans" , "Noto Sans CJK SC" , "Microsoft YaHei" , "微软雅黑" , sans-serif;
   }
   .mu-ripple-wrapper {
     cursor: pointer !important;
