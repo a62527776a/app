@@ -3,6 +3,7 @@
 import { app, BrowserWindow } from 'electron'
 import ipc from './ipc'
 import native from './native'
+
 app.setAppUserModelId('org.simulatedgreg.rrtv')
 // On Windows, logs `true` if "quiet hours" are enabled
 // On macOS, logs `true` if "do not disturb" is enabled
