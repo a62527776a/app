@@ -3,7 +3,7 @@ import axios from 'axios'
 export let jsonCore = (url, method = 'GET', body = {}) => {
   return new Promise((resolve, reject) => {
     axios.request({
-      baseURL: 'http://localhost:7001',
+      baseURL: 'http://192.168.10.57:7001',
       url: url,
       method: method,
       data: body

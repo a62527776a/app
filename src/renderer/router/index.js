@@ -19,8 +19,15 @@ export default new Router({
       component: require('@/pages/share-text').default,
       meta: {
         title: '分享文本',
-        describeText: '分享页底部文本',
         icon: 'share'
+      }
+    },
+    {
+      path: '/setting',
+      component: require('@/pages/setting').default,
+      meta: {
+        title: '设置',
+        icon: 'settings'
       }
     }
   ]

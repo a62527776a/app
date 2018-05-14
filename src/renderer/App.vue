@@ -3,7 +3,7 @@
     <mu-appbar :style="{ width: drawer ? '75%' : '100%' }" style="-webkit-app-region: drag; float: right;transition: all .45s cubic-bezier(.23,1,.32,1)" :title="$route.meta.title">
       <mu-icon-button style="-webkit-app-region: no-drag" icon="menu" @click="drawer = !drawer" slot="left"/>
       <mu-icon-button @click="minimize" style="-webkit-app-region: no-drag" icon="minimize" slot="right"/>
-      <mu-icon-button style="-webkit-app-region: no-drag" icon="close" slot="right"/>
+      <mu-icon-button @click="close" style="-webkit-app-region: no-drag" icon="close" slot="right"/>
     </mu-appbar>
     <mu-drawer style="width: 25%" :open="drawer" @close="drawer = false">
       <mu-appbar style="-webkit-app-region: drag; float: right;" title="人人视频">
@@ -15,20 +15,15 @@
           :value="routes.path"
           v-if="routes.meta" 
           :title="routes.meta.title" 
-          :describeText="routes.meta && routes.meta.describeText">
+          @click.native="$router.push(routes.path)">
           <mu-icon slot="left" :value="routes.meta && routes.meta.icon"/>
-        </mu-list-item>
-      </mu-list>
-      <mu-divider/>        
-      <mu-list>
-        <mu-list-item 
-          title="设置">
-          <mu-icon slot="left" value="settings"/>
         </mu-list-item>
       </mu-list>
     </mu-drawer>
     <div style="float: right;transition: all .45s cubic-bezier(.23,1,.32,1)" :style="{ width: drawer ? '75%' : '100%' }">
-      <router-view></router-view>
+      <transition name="fade">
+        <router-view></router-view>
+      </transition>
     </div>
   </div>
 </template>
@@ -46,6 +41,9 @@
     methods: {
       minimize: function () {
         ipcRenderer.send('minimize')
+      },
+      close: function () {
+        ipcRenderer.send('close')
       }
     }
   }

@@ -23,14 +23,19 @@
     "electron-toolkit": "electron ./node_modules/electron-toolkit"
   },
   "build": {
-    "productName": "rr-fe-electron",
-    "appId": "org.simulatedgreg.electron-vue",
+    "productName": "人人视频",
+    "appId": "org.simulatedgreg.rrtv",
     "directories": {
       "output": "build"
     },
     "files": [
       "dist/electron/**/*"
     ],
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "menuCategory": true
+    },
     "dmg": {
       "contents": [
         {

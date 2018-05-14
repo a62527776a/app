@@ -1,13 +1,16 @@
-import { ipcMain } from 'electron'
+import { app, ipcMain } from 'electron'
 import native from '../native'
 
-export default (app) => {
+export default (myApp) => {
   // 推送桌面通知
   ipcMain.on('notification', (e, arg) => {
     native.notification(arg.title, arg.body)
   })
   // 窗口最小化
   ipcMain.on('minimize', () => {
-    app.minimize()
+    myApp.minimize()
+  })
+  ipcMain.on('close', () => {
+    app.quit()
   })
 }

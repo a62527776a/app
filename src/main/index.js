@@ -2,7 +2,7 @@
 
 import { app, BrowserWindow } from 'electron'
 import ipc from './ipc'
-app.setAppUserModelId('org.simulatedgreg.electron-vue')
+app.setAppUserModelId('org.simulatedgreg.rrtv')
 // On Windows, logs `true` if "quiet hours" are enabled
 // On macOS, logs `true` if "do not disturb" is enabled
 

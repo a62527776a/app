@@ -12,8 +12,8 @@
       selectable :showCheckbox="showCheckbox">
       <mu-thead slot="header">
         <mu-tr>
-          <mu-th tooltip="标题">标题</mu-th>
-          <mu-th tooltip="描述">描述</mu-th>
+          <mu-th style="width: 10%" tooltip="标题">标题</mu-th>
+          <mu-th style="width: 40%" tooltip="描述">描述</mu-th>
           <mu-th tooltip="按钮文本">按钮文本</mu-th>
           <mu-th tooltip="是否启用">是否启用</mu-th>
           <mu-th tooltip="操作">操作</mu-th>
@@ -21,8 +21,8 @@
       </mu-thead>
       <mu-tbody>
         <mu-tr v-for="(item,index) in tableData" :key="index" ref="tr">
-          <mu-td>{{item.title}}</mu-td>
-          <mu-td>{{item.desc}}</mu-td>
+          <mu-td style="width: 10%">{{item.title}}</mu-td>
+          <mu-td style="width: 40%">{{item.desc}}</mu-td>
           <mu-td>{{item.btnText}}</mu-td>
           <mu-td>
             <mu-switch v-model="item.enable" @click.native.self="enableShareText(item)" />
